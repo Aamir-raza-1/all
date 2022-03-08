@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  org: kit-devops
+
+
+helmGlobals:
+  chartHome: charts
+# https://cloud.google.com/anthos-config-management/docs/how-to/use-repo-kustomize-helm#supported_fields# https://cloud.google.com/anthos-config-management/docs/how-to/use-repo-kustomize-helm#supported_fields
+helmCharts:
+- name: vcluster
+  releaseName: vcluster
+  # namespace: external-secrets
+  # Commented in case have local helm chart.
+  # All available options 
+  #version: 0.4.4
+  # repo: https://charts.loft.sh
